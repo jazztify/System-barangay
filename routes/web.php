@@ -10,7 +10,8 @@ use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 // Auth
-Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+Route::redirect('/', '/login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
